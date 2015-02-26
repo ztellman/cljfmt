@@ -196,7 +196,7 @@
       zloc)))
 
 (defn indent [form indents]
-  (let [indents (into default-indents indents)]
+  (let [indents (into {} #_default-indents indents)]
     (transform form edit-all should-indent? #(indent-line % indents))))
 
 (defn reindent [form indents]
